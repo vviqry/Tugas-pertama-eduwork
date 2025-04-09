@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas 1 (update css)</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        background-color: #0047ab;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 40px;
+        background-color: #e9f0ff;
+        align-items: center;
+      }
+
+      .hero img {
+        max-width: 100%;
+        border-radius: 20px;
+      }
+
+      .hero button {
+        padding: 10px 20px;
+        background-color: #0047ab;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+
+      .about {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: #ffffff;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        padding-top: 20px;
+      }
+
+      .about-box {
+        background-color: #dbe9ff;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .portfolio {
+        padding: 40px 20px;
+        background-color: #f1f1f1;
+      }
+
+      .portfolio h2 {
+        text-align: center;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .project {
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .project img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+
+      footer {
+        background-color: #0047ab;
+        color: white;
+        text-align: center;
+        padding: 15px;
+      }
+
+      /* ========== RESPONSIVE DESIGN ========== */
+
+      @media (max-width: 768px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        nav {
+          text-align: center;
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        nav a {
+          display: inline-block;
+          margin: 5px 10px;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding: 20px;
+        }
+
+        .portfolio {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div><strong>Brand</strong></div>
+      <nav>
+        <a href="#">Header</a>
+        <a href="#">Biodata</a>
+        <a href="#">Portofolio</a>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div style="text-align: center">
+        <h2>Selamat Datang di Website Saya</h2>
+        <p>
+          Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks
+          seperti ini.
+        </p>
+        <button>Pelajari lebih lanjut</button>
+      </div>
+      <div>
+        <img
+          src="https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt="foto"
+        />
+      </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section class="about">
+      <h2>About Me</h2>
+      <p>A brief introduction about myself</p>
+      <div class="about-grid">
+        <div class="about-box"><strong>Full Name:</strong> Dodi</div>
+        <div class="about-box"><strong>Education:</strong> S1 Informatika</div>
+        <div class="about-box"><strong>Pekerjaan:</strong> Programmer</div>
+        <div class="about-box"><strong>Contact:</strong> dodi@example.com</div>
+        <div class="about-box"><strong>Hobi:</strong> Membaca, Coding</div>
+        <div class="about-box"><strong>Alamat:</strong> Jakarta</div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio">
+      <h2>Portofolio</h2>
+      <div class="projects">
+        <div class="project">
+          <img
+            src="https://www.exabytes.co.id/blog/wp-content/uploads/2021/02/image-25.png"
+            alt="Proyek 1"
+          />
+          <h3>Proyek 1</h3>
+          <p>Deskripsi proyek 1.</p>
+        </div>
+        <div class="project">
+          <img
+            src="https://www.exabytes.co.id/blog/wp-content/uploads/2021/02/image-27.png"
+            alt="Proyek 2"
+          />
+          <h3>Proyek 2</h3>
+          <p>Deskripsi proyek 2.</p>
+        </div>
+        <div class="project">
+          <img
+            src="https://lh6.googleusercontent.com/NxNvJS3SvlEMduAu9wR8zk0V2v76_dmtuHT2-cNLgUMhz5MZRHby7lFeuHcax8DpJV6xMDUQzDH6pty1P-j0LZ91YydKMsA0oz74jhQSaGfB7qc1dKrWu4AGwU7ZdBkfOhO-YELI"
+            alt="Proyek 3"
+          />
+          <h3>Proyek 3</h3>
+          <p>Deskripsi proyek 3.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>&copy; 2024 Dodi. All rights reserved.</footer>
+  </body>
+</html>
