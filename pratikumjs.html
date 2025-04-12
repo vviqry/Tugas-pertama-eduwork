@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daftar Produk Buah</title>
+    <link rel="icon" href="watermelon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .card {
+        max-width: 18rem;
+      }
+      .product-img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar START -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Buah Segar</a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar END -->
+
+    <div class="container my-4">
+      <h2>Daftar Produk Buah</h2>
+      <div class="mb-3">
+        <label for="filterKategori" class="form-label">Filter Kategori:</label>
+        <select
+          id="filterKategori"
+          class="form-select"
+          onchange="tampilkanProduk()"
+        >
+          <option value="Semua">Semua</option>
+          <option value="Tropis">Tropis</option>
+          <option value="Subtropis">Subtropis</option>
+        </select>
+      </div>
+
+      <div id="produkContainer" class="d-flex flex-wrap gap-3"></div>
+    </div>
+
+    <script>
+      const produk = [
+        {
+          nama: "Mangga",
+          harga: "Rp 15.000/kg",
+          deskripsi: "Buah tropis manis dan menyegarkan.",
+          gambar:
+            "https://images.unsplash.com/photo-1605027990121-cbae9e0642df?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          kategori: "Tropis",
+        },
+        {
+          nama: "Apel",
+          harga: "Rp 20.000/kg",
+          deskripsi: "Apel segar dari dataran tinggi.",
+          gambar:
+            "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          kategori: "Subtropis",
+        },
+        {
+          nama: "Pisang",
+          harga: "Rp 10.000/kg",
+          deskripsi: "Pisang manis dan kaya energi.",
+          gambar:
+            "https://images.unsplash.com/photo-1647377502180-7604b5470dbe?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          kategori: "Tropis",
+        },
+        {
+          nama: "Anggur",
+          harga: "Rp 25.000/kg",
+          deskripsi: "Buah anggur segar untuk camilan sehat.",
+          gambar:
+            "https://images.unsplash.com/photo-1416432969026-7e41a751ee1e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          kategori: "Subtropis",
+        },
+      ];
+
+      function tampilkanProduk() {
+        const container = document.getElementById("produkContainer");
+        const filter = document.getElementById("filterKategori").value;
+        container.innerHTML = "";
+
+        const filteredProduk =
+          filter === "Semua"
+            ? produk
+            : produk.filter((p) => p.kategori === filter);
+
+        filteredProduk.forEach((item) => {
+          const card = document.createElement("div");
+          card.className = "card";
+
+          card.innerHTML = `
+            <img src="${item.gambar}" class="product-img card-img-top" alt="${item.nama}" />
+            <div class="card-body">
+              <h5 class="card-title">${item.nama}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">${item.harga}</h6>
+              <p class="card-text">${item.deskripsi}</p>
+            </div>
+          `;
+
+          container.appendChild(card);
+        });
+      }
+
+      // Tampilkan saat halaman pertama dibuka
+      tampilkanProduk();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
