@@ -979,25 +979,39 @@
       aria-labelledby="contactModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
           <div class="modal-header">
-            <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
+            <h5 class="modal-title text-success" id="contactModalLabel">
+              Hubungi Saya
+            </h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
-              aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body text-center">
-            <p>Silakan hubungi saya melalui:</p>
-            <a href="mailto:fikrymutsagoful@gmail.com" target="_blank">
-              <button class="btn btn-outline-success mb-2">Email</button> </a
-            ><br />
-            <a href="https://wa.link/yd925r" target="_blank">
-              <button class="btn btn-outline-success">WhatsApp</button>
-            </a>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="name" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Pesan</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-success w-100">Kirim</button>
+            </form>
           </div>
         </div>
       </div>
